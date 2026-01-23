@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply bg-verdant-50 text-verdant-950 dark:bg-zinc-950 dark:text-verdant-50 transition-colors duration-300;
+  }
+}
+
+/* Custom Scrollbar for that premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-verdant-500/50 rounded-full hover:bg-verdant-500;
+}
