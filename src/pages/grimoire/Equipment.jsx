@@ -9,7 +9,7 @@ export default function Equipment() {
         { name: "Rapier", cost: "2-b", range: "1-hx", tags: "Pierce/Accurate/Light", desc: <span><strong>Pierce.</strong> 1d6 + AGILITY damage.<br /><strong>Accurate.</strong> Spend 1 EFFORT for +1 to hit.<br /><strong>Light.</strong> Wield in off hand.</span> },
         { name: "Pistol", cost: "20-b", range: "6-30 hx", tags: "Pierce/Precise", desc: <span><strong>Pierce.</strong> 2d10 damage.<br /><strong>Precise.</strong> +2 to hit against MARKED targets.</span> },
         { name: "Long Rifle", cost: "40-b", range: "8-40 hx", tags: "Pierce/Bludgeon/Precise", desc: <span><strong>Pierce.</strong> 2d12 damage.<br /><strong>Bludgeon.</strong> 1d6 damage.<br /><strong>Precise.</strong> +2 to hit against MARKED targets.</span> },
-        { name: "Automatic Rifle", cost: "60-b", range: "6-30 hx", tags: "Pierce/Bludgeon/Rapid", desc: <span><strong>Pierce.</strong> 2d8 damage.<br /><strong>Bludgeon.</strong> 1d6 damage.<br /><strong>Rapid.</strong> Target another enemy for 1 EFFORT. -2 penalty per extra target.</span> },
+        { name: "Automatic Rifle", cost: "60-b", range: "6-30 hx", tags: "Pierce/Bludgeon/Rapid", desc: <span><strong>Pierce.</strong> 2d8 damage.<br /><strong>Bludgeon.</strong> 1d6 damage.<br /><strong>Rapid.</strong> Target another enemy for 1 EFFORT. -1 penalty per extra target.</span> },
     ];
 
     const armors = [
