@@ -9,17 +9,17 @@ export default {
         extend: {
             colors: {
                 verdant: {
-                    50: '#ecfdf5',
-                    100: '#d1fae5',
-                    200: '#a7f3d0',
-                    300: '#6ee7b7',
-                    400: '#34d399',
-                    500: '#10b981', // Bloom/Emerald
-                    600: '#059669',
-                    700: '#047857',
-                    800: '#065f46',
-                    900: '#064e3b',
-                    950: '#022c22', // Deep Jungle
+                    50: '#f0fdf4', // Slightly warmer/richer off-white
+                    100: '#dcfce7',
+                    200: '#bbf7d0',
+                    300: '#86efac',
+                    400: '#4ade80',
+                    500: '#22c55e', // Standard Green-500 equivalent, slightly darker than previous emerald-ish
+                    600: '#16a34a', // Darker standard green
+                    700: '#15803d', // Rich forest green
+                    800: '#166534', // Deep green
+                    900: '#14532d', // Very dark green
+                    950: '#052e16', // Almost black green
                 },
                 'bloom-dark': '#0a0a0a',
             },

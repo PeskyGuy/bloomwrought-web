@@ -21,13 +21,13 @@ export default function Layout() {
                         <nav className="flex items-center gap-6">
                             <Link
                                 to="/lore"
-                                className={`text-sm font-medium transition-colors hover:text-verdant-600 dark:hover:text-verdant-300 ${location.pathname === '/lore' ? 'text-verdant-600 dark:text-verdant-400' : 'text-zinc-600 dark:text-zinc-400'}`}
+                                className={`text-sm font-medium transition-colors border-b-2 ${location.pathname === '/lore' ? 'text-verdant-700 dark:text-verdant-400 border-verdant-600 dark:border-verdant-400' : 'text-zinc-600 dark:text-zinc-400 border-transparent hover:text-verdant-900 dark:hover:text-verdant-200 hover:border-verdant-300'}`}
                             >
                                 Lore
                             </Link>
                             <Link
                                 to="/grimoire"
-                                className={`text-sm font-medium transition-colors hover:text-verdant-600 dark:hover:text-verdant-300 ${location.pathname.startsWith('/grimoire') ? 'text-verdant-600 dark:text-verdant-400' : 'text-zinc-600 dark:text-zinc-400'}`}
+                                className={`text-sm font-medium transition-colors border-b-2 ${location.pathname.startsWith('/grimoire') ? 'text-verdant-700 dark:text-verdant-400 border-verdant-600 dark:border-verdant-400' : 'text-zinc-600 dark:text-zinc-400 border-transparent hover:text-verdant-900 dark:hover:text-verdant-200 hover:border-verdant-300'}`}
                             >
                                 Grimoire
                             </Link>

@@ -109,8 +109,8 @@ export default function Actions() {
                                 { name: "Long Rifle", cost: "40-b", tags: "Pierce/Bludgeon/Precise", desc: <span><strong>Pierce.</strong> Deal 2d12 damage on hit.<br /><strong>Bludgeon.</strong> Deal 1d6 damage on hit.<br /><strong>Precise.</strong> +2 to hit against MARKED targets.</span> },
                                 { name: "Automatic Rifle", cost: "60-b", tags: "Pierce/Bludgeon/Rapid", desc: <span><strong>Pierce.</strong> Deal 2d8 damage on hit.<br /><strong>Bludgeon.</strong> Deal 1d6 damage on hit.</span> },
                             ].map((weapon) => (
-                                <tr key={weapon.name} className="hover:bg-verdant-50/50 dark:hover:bg-verdant-900/20 transition-colors">
-                                    <td className="p-4 font-bold text-verdant-800 dark:text-verdant-200">{weapon.name}</td>
+                                <tr key={weapon.name} className="hover:bg-verdant-100 dark:hover:bg-verdant-900/40 transition-colors">
+                                    <td className="p-4 font-bold text-verdant-900 dark:text-verdant-200">{weapon.name}</td>
                                     <td className="p-4 text-center font-mono text-zinc-500">{weapon.cost}</td>
                                     <td className="p-4 text-zinc-600 dark:text-zinc-300 leading-relaxed">{weapon.desc}</td>
                                     <td className="p-4 text-xs font-mono text-verdant-700 dark:text-verdant-400">{weapon.tags}</td>
