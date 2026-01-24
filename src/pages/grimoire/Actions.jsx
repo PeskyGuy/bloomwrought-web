@@ -10,6 +10,16 @@ const ActionCard = ({ title, description, details }) => (
     </div>
 );
 
+const CategoryCard = ({ label, variant = "primary" }) => (
+    <div className={`p-4 text-center rounded-xl font-bold transition-all duration-300 border shadow-sm
+        ${variant === "primary"
+            ? "border-verdant-200 dark:border-verdant-800 bg-verdant-50/30 dark:bg-verdant-900/10 text-verdant-800 dark:text-verdant-200 hover:border-verdant-400 dark:hover:border-verdant-600 hover:shadow-md"
+            : "border-zinc-200 dark:border-zinc-800 bg-zinc-50/30 dark:bg-zinc-900/10 text-zinc-700 dark:text-zinc-300 hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-md"
+        }`}>
+        {label}
+    </div>
+);
+
 export default function Actions() {
     return (
         <div>
@@ -60,22 +70,18 @@ export default function Actions() {
 
             <section className="mb-12">
                 <h2 className="text-3xl font-display font-bold mb-6 text-verdant-800 dark:text-verdant-300">Item Types</h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     {['Weapon', 'Armor', 'Consumable', 'Tool'].map(type => (
-                        <div key={type} className="p-4 text-center rounded-lg bg-zinc-100 dark:bg-zinc-800 font-medium text-zinc-700 dark:text-zinc-300">
-                            {type}
-                        </div>
+                        <CategoryCard key={type} label={type} variant="secondary" />
                     ))}
                 </div>
             </section>
 
             <section>
                 <h2 className="text-3xl font-display font-bold mb-6 text-verdant-800 dark:text-verdant-300">Tag Categories</h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     {['Damage', 'Conditional', 'Movement', 'Skill'].map(tag => (
-                        <div key={tag} className="p-4 text-center rounded-lg border border-verdant-200 dark:border-verdant-800 text-verdant-800 dark:text-verdant-200 font-bold">
-                            {tag}
-                        </div>
+                        <CategoryCard key={tag} label={tag} variant="primary" />
                     ))}
                 </div>
             </section>
