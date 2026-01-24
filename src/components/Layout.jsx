@@ -25,6 +25,12 @@ export default function Layout() {
                             >
                                 Lore
                             </Link>
+                            <Link
+                                to="/grimoire"
+                                className={`text-sm font-medium transition-colors hover:text-verdant-600 dark:hover:text-verdant-300 ${location.pathname.startsWith('/grimoire') ? 'text-verdant-600 dark:text-verdant-400' : 'text-zinc-600 dark:text-zinc-400'}`}
+                            >
+                                Grimoire
+                            </Link>
                             {/* Add more links here */}
 
                             <div className="w-px h-6 bg-verdant-200 dark:bg-verdant-800 mx-1"></div>
