@@ -59,7 +59,7 @@ export default function Actions() {
             </section>
 
             <section className="mb-12">
-                <h2 className="text-3xl font-display font-bold mb-6 text-verdant-800 dark:text-verdant-300">Action Types</h2>
+                <h2 className="text-3xl font-display font-bold mb-6 text-verdant-800 dark:text-verdant-300">Item Types</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {['Weapon', 'Armor', 'Consumable', 'Tool'].map(type => (
                         <div key={type} className="p-4 text-center rounded-lg bg-zinc-100 dark:bg-zinc-800 font-medium text-zinc-700 dark:text-zinc-300">
