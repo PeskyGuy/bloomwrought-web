@@ -58,10 +58,10 @@ export default function Combat() {
                 <div className="grid grid-cols-1 gap-6">
                     <StanceCard
                         name="Aggressive Stance"
-                        generation="Grants +2 EFFORT per enemy slain."
+                        generation="Grants +1 EFFORT per enemy slain."
                         variantTags={[
-                            { name: "Momentum", effect: "You gain +1 SPEED per tag used with EFFORT." },
-                            { name: "Berserker", effect: "You gain +1 DAMAGE per tag used with EFFORT." }
+                            { name: "Momentum", effect: "You gain +1 SPEED per additional tag applied to Movement." },
+                            { name: "Berserker", effect: "You gain +1 DAMAGE per additional tag applied to a Strike." }
                         ]}
                     />
                     <StanceCard
@@ -115,6 +115,23 @@ export default function Combat() {
                         <div key={attr.name} className="p-4 border border-zinc-200 dark:border-zinc-800 rounded-lg bg-zinc-50/30 dark:bg-zinc-900/30">
                             <strong className="text-verdant-700 dark:text-verdant-400 block mb-1 font-display text-lg">{attr.name}</strong>
                             <span className="text-sm">{attr.effect}</span>
+                        </div>
+                    ))}
+                </div>
+            </Section>
+
+            <Section title="Sub-attributes">
+                <p>These attributes inherit or work alongside the four main attributes.</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                    {[
+                        { name: "Speed", effect: "Determines how many hexes you can move in a turn." },
+                        { name: "Armor", effect: "Flat damage reduction against attacks that hit." },
+                        { name: "Health", effect: "Your capacity to endure physical trauma." },
+                        { name: "Evasion", effect: "Your ability to avoid being hit by attacks." }
+                    ].map(attr => (
+                        <div key={attr.name} className="p-4 border border-verdant-100 dark:border-verdant-900/50 rounded-lg bg-white dark:bg-zinc-900/20 shadow-sm">
+                            <strong className="text-verdant-800 dark:text-verdant-300 block mb-1 font-display text-lg">{attr.name}</strong>
+                            <span className="text-sm text-zinc-600 dark:text-zinc-400">{attr.effect}</span>
                         </div>
                     ))}
                 </div>
