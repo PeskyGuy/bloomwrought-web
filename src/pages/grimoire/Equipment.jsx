@@ -15,7 +15,7 @@ export default function Equipment() {
     const armors = [
         { name: "Scavenger Leathers", cost: "4-b", armor: "1", tags: "Light", desc: "Light. Additional armor based on AGILITY (max 2)." },
         { name: "Chitinous Armor", cost: "4-b", armor: "1", tags: "Light/Weathered", desc: "Light. Plus max 2 from AGILITY. Weathered: +1 Armor against ACID." },
-        { name: "Reinforced Jacket", cost: "6-b", armor: "2", tags: "Medium/Makeshift", desc: "Medium. Practical: Free 'use' action once per round." },
+        { name: "Reinforced Jacket", cost: "6-b", armor: "2", tags: "Medium/Practical", desc: "Medium. Practical: Free 'use' action once per round." },
         { name: "Scrap Mail", cost: "5-b", armor: "3", tags: "Medium/Makeshift", desc: "Medium. Makeshift: Mended without tools." },
         { name: "Alloyed Plate", cost: "14-b", armor: "4", tags: "Heavy/Reflective", desc: "Heavy. -2 SPEED. Reflective: Ranged attacks -1 to hit you." },
         { name: "War-Shell", cost: "14-b", armor: "5", tags: "Heavy/Spiked", desc: "Heavy. -2 SPEED. Spiked: +2 DAMAGE while grappling." },
