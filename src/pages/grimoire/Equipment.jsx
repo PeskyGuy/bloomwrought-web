@@ -18,7 +18,7 @@ export default function Equipment() {
         { name: "Reinforced Jacket", cost: "6-b", armor: "2", tags: "Medium/Practical", properties: "No SPEED penalty. Gain one free Use action per round." },
         { name: "Scrap Mail", cost: "5-b", armor: "3", tags: "Medium/Makeshift", properties: "No SPEED penalty. Can be repaired without tools using basic materials." },
         { name: "Alloyed Plate", cost: "14-b", armor: "4", tags: "Heavy/Reflective", properties: "-2 SPEED penalty. Ranged attacks against you have -1 to hit. Immune to Push and Pull effects." },
-        { name: "War-Shell", cost: "14-b", armor: "5", tags: "Heavy/Spiked", properties: "-2 SPEED penalty. Deal +2 damage to grappling enemies. Immune to Push and Pull effects." },
+        { name: "War-Shell", cost: "14-b", armor: "5", tags: "Heavy/Spiked", properties: "-2 SPEED penalty. Deal +2 damage to targets you are grappling or have RESTRAINED. Immune to Push and Pull effects." },
     ];
 
     const consumables = [
