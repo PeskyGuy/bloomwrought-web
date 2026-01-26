@@ -58,7 +58,7 @@ export default function Actions() {
                     <ActionCard
                         title="Scan"
                         description="Analyze a target to learn their capabilities."
-                        details="Reveal one attribute from the target."
+                        details="Reveal one attribute from the target and apply TRACKED."
                     />
                 </div>
             </section>
@@ -74,8 +74,8 @@ export default function Actions() {
                     />
                     <ActionCard
                         title="Dodge"
-                        description="Spend effort to dodge an attack or hazard."
-                        details="Spend 1 EFFORT to dodge. Increases in cost by 1 for each tag applied to the attack."
+                        description="Spend stamina to dodge an attack or hazard."
+                        details="Spend 1 STAMINA to dodge. Increases in cost by 1 for each tag applied to the attack."
                     />
                     <ActionCard
                         title="Retaliate"
