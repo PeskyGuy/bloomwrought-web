@@ -26,6 +26,12 @@ export default function Layout() {
                                 Lore
                             </Link>
                             <Link
+                                to="/ancestries"
+                                className={`text-sm font-medium transition-colors border-b-2 ${location.pathname === '/ancestries' ? 'text-verdant-700 dark:text-verdant-400 border-verdant-600 dark:border-verdant-400' : 'text-zinc-600 dark:text-zinc-400 border-transparent hover:text-verdant-900 dark:hover:text-verdant-200 hover:border-verdant-300'}`}
+                            >
+                                Ancestries
+                            </Link>
+                            <Link
                                 to="/grimoire"
                                 className={`text-sm font-medium transition-colors border-b-2 ${location.pathname.startsWith('/grimoire') ? 'text-verdant-700 dark:text-verdant-400 border-verdant-600 dark:border-verdant-400' : 'text-zinc-600 dark:text-zinc-400 border-transparent hover:text-verdant-900 dark:hover:text-verdant-200 hover:border-verdant-300'}`}
                             >
@@ -46,7 +52,7 @@ export default function Layout() {
 
             <footer className="py-8 border-t border-verdant-200 dark:border-verdant-900 mt-12 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm">
                 <div className="max-w-7xl mx-auto px-4 text-center text-sm text-zinc-500 dark:text-zinc-500">
-                    <p className="font-mono text-xs opacity-70">v0.2.1e</p>
+                    <p className="font-mono text-xs opacity-70">v0.3.0</p>
                 </div>
             </footer>
         </div>

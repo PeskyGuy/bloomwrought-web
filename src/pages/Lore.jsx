@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Section = ({ title, children, className = "" }) => (
     <section className={`mb-16 md:mb-24 scroll-mt-24 ${className}`} id={title.toLowerCase().replace(/\s+/g, '-')}>
@@ -9,17 +10,6 @@ const Section = ({ title, children, className = "" }) => (
             {children}
         </div>
     </section>
-);
-
-const RaceCard = ({ name, description }) => (
-    <div className="bg-white dark:bg-zinc-900 rounded-xl p-6 shadow-sm border border-verdant-100 dark:border-verdant-800/50 hover:border-verdant-400 dark:hover:border-verdant-600 transition-all hover:shadow-md group">
-        <h3 className="text-xl mb-2 text-verdant-700 dark:text-verdant-400 group-hover:text-verdant-600 dark:group-hover:text-verdant-300 font-display">
-            {name}
-        </h3>
-        <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400">
-            {description}
-        </p>
-    </div>
 );
 
 export default function Lore() {
@@ -66,34 +56,34 @@ export default function Lore() {
             </Section>
 
             <Section title="The People">
-                <p className="mb-8">
-                    Humanity has fractured into several subspecies that have adapted to their environment in different ways.
+                <p className="mb-4">
+                    The Bloom reshaped more than just the land. In the decades following the calamity, survivors began to change. Their bodies adapted to the hostile new world in ways both wondrous and terrible. One humanity became many, each bearing the Verdant's mark differently.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <RaceCard
-                        name="Humans"
-                        description="The standard human race adapted to the new world."
-                    />
-                    <RaceCard
-                        name="Velari"
-                        description="A race of humans ostracized by the masses for their need for blood and their leech-like mouthparts."
-                    />
-                    <RaceCard
-                        name="Myrians"
-                        description="A race of Krik half-breeds, they have insectoid features and are known for their many legs and enhanced strength."
-                    />
-                    <RaceCard
-                        name="Kriks"
-                        description="A race of humanoid insects, it is not sure where they came from but they have integrated into human society since the calamity."
-                    />
-                    <RaceCard
-                        name="Sylvans"
-                        description="A race of plant-like humanoids, they are known for their connection to nature and their ability to communicate with plants."
-                    />
-                    <RaceCard
-                        name="Golems"
-                        description="A race of sapient automatons, created by humans before the calamity to serve as workers and soldiers. They are now free and independent, but still serve humanity in their own way."
-                    />
+                <p className="mb-4">
+                    <strong className="text-verdant-700 dark:text-verdant-400">Humans</strong> who remained largely unchanged found themselves no longer dominant. Their adaptability became their greatest strength, letting them survive where others fell. Yet many cling to memories of the old world, viewing the changed as aberrations rather than kin. This prejudice runs deep in human settlements, where "pure" bloodlines hold value above all else.
+                </p>
+                <p className="mb-4">
+                    The <strong className="text-verdant-700 dark:text-verdant-400">Velari</strong> emerged in the first generation after the Bloom. Their transformation proved the most visibly disturbing—leech-like mouthparts and an insatiable need for blood. Communities drove them out immediately, fearing contagion or seeing only monsters. The Velari learned to hide in shadows, forming their own enclaves or living as wanderers. Even now, a Velari entering a human settlement risks violence, though some have earned grudging acceptance through service and sacrifice.
+                </p>
+                <p className="mb-4">
+                    When the <strong className="text-verdant-700 dark:text-verdant-400">Kriks</strong> first appeared, humanity couldn't decide whether to greet them as allies or enemies. These humanoid insects seemed to emerge from the Verdant itself, though some whisper they arrived with it. Their origins remain a mystery. Some theorize they evolved from native insects accelerated by the Bloom. Others note their technology and social structures bear no resemblance to anything earthly, suggesting they came from somewhere far beyond. The Kriks themselves offer no answers, speaking only of "the arrival" in their clicking tongue. Regardless, they proved intelligent, organized, and surprisingly willing to cooperate. Their hive-mind communication and alien perspective make them invaluable, though many humans find their insectoid nature—and their unsettling familiarity with the Verdant—deeply troubling.
+                </p>
+                <p className="mb-4">
+                    The <strong className="text-verdant-700 dark:text-verdant-400">Myrians</strong> represent an uncomfortable truth: humans and Kriks can interbreed. These half-breeds possess Krik strength and human adaptability, yet belong fully to neither society. Many Myrians serve as mediators between the two peoples, their hybrid nature letting them bridge cultural divides. They face discrimination from both sides, though. Humans see them as tainted. Kriks view them as incomplete. Despite this, Myrian communities have begun to flourish, forging their own identity separate from their parent races.
+                </p>
+                <p className="mb-4">
+                    The <strong className="text-verdant-700 dark:text-verdant-400">Sylvans</strong> changed the most from the Bloom. Their bodies transformed into living plant matter. They possess an innate connection to the Verdant that others lack, able to sense its moods and navigate its dangers with uncanny precision. This connection makes them invaluable as guides and scouts, yet it also isolates them. Many Sylvans struggle to maintain their humanity, drawn ever deeper into communion with the Verdant. Some settlements welcome them as blessed interpreters of nature. Others fear they will lose themselves entirely and become extensions of the hostile jungle.
+                </p>
+                <p className="mb-4">
+                    The <strong className="text-verdant-700 dark:text-verdant-400">Golems</strong> stand apart from all others. The Bloom didn't change them—it freed them. Created before the calamity as tireless workers and soldiers, these automatons gained true sentience during the chaos. Now free, they struggle to define their purpose in a world that no longer needs them as tools. Some continue to serve humanity out of loyalty or habit. Others seek to forge their own path. Their mechanical nature makes them uniquely suited to the Verdant's harshest environments, yet many humans view them with suspicion, unable to accept that machines might possess souls.
+                </p>
+                <p className="mb-6">
+                    Discrimination persists despite the passage of time. Human settlements often maintain strict hierarchies, with "pure" humans at the top and the changed relegated to lesser roles. Velari face the worst of it, frequently barred from entering cities or forced to wear identifying marks. Intermarriage between races remains taboo in many communities, and mixed-race children often face rejection from all sides. Yet the Verdant's constant threats demand cooperation. Slowly, grudgingly, the peoples of the Bloomwrought are learning that survival demands unity—or at least tolerance.
+                </p>
+                <div className="p-6 bg-verdant-50/50 dark:bg-verdant-900/20 rounded-xl border border-verdant-200 dark:border-verdant-800">
+                    <p className="text-sm text-verdant-900 dark:text-verdant-100 italic m-0">
+                        For detailed mechanical information about each ancestry, including attributes and traits, visit the <Link to="/ancestries" className="text-verdant-600 dark:text-verdant-400 hover:text-verdant-700 dark:hover:text-verdant-300 font-semibold underline">Ancestries</Link> page.
+                    </p>
                 </div>
             </Section>
         </div>
