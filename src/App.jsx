@@ -7,6 +7,7 @@ import GrimoireOverview from './pages/grimoire/Overview';
 import Combat from './pages/grimoire/Combat';
 import Actions from './pages/grimoire/Actions';
 import Equipment from './pages/grimoire/Equipment';
+import Glossary from './pages/grimoire/Glossary';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="combat" element={<Combat />} />
             <Route path="actions" element={<Actions />} />
             <Route path="equipment" element={<Equipment />} />
+            <Route path="glossary" element={<Glossary />} />
           </Route>
         </Route>
       </Routes>

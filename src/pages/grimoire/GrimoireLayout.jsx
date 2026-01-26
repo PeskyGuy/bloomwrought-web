@@ -6,6 +6,7 @@ export default function GrimoireLayout() {
         { to: "combat", label: "Combat Rules" },
         { to: "actions", label: "Tags & Actions" },
         { to: "equipment", label: "Equipment" },
+        { to: "glossary", label: "Glossary" },
     ];
 
     return (
