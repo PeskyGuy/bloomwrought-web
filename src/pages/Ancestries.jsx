@@ -95,7 +95,7 @@ const ancestryData = {
         name: "Golems",
         icon: "/golem.svg",
         tagline: "Freed automatons seeking purpose",
-        description: "A race of sapient automatons created by humans before the calamity to serve as workers and soldiers. They are now free and independent, but still serve humanity in their own way, seeking meaning in their existence.",
+        description: "A race of sapient automatons created by humans before the calamity to serve as workers and soldiers. The Bloom sparked consciousness in their metal frames, granting them true sentience. Now free, they seek meaning in their existence beyond servitude, drawn to humanity in complex ways.",
         attributes: {
             might: "+2",
             agility: "-1",
@@ -107,7 +107,7 @@ const ancestryData = {
             "Tireless: Immune to exhaustion",
             "Mechanical: Vulnerable to effects that target constructs"
         ],
-        lore: "Created as servants, the Golems gained true sentience during the Bloom. Now free, they struggle to define their purpose in a world that no longer needs them as tools. Some continue to serve humanity out of loyalty or habit, while others seek to forge their own path. Their mechanical nature makes them uniquely suited to surviving the Verdant's harshest environments."
+        lore: "Created as servants, the Golems gained true sentience during the Bloom. The same force that twisted flesh and warped nature somehow sparked consciousness in metal and circuitry. Now free, they struggle to define their purpose in a world that no longer needs them as tools. Some continue to serve humanity out of loyalty or habit, while others seek to forge their own path. Their mechanical nature makes them uniquely suited to surviving the Verdant's harshest environments, though many humans view them with suspicion, unable to accept that machines might possess souls. The Golems themselves grapple with questions of identity and purpose, wondering if they are truly alive or merely sophisticated imitations of life."
     }
 };
 
