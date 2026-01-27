@@ -36,8 +36,6 @@ jobs:
       - name: Build
         working-directory: ./BloomwroughtWeb
         run: npm run build
-        env:
-          VITE_BASE_PATH: /BloomwroughtWeb/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
