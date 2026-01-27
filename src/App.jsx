@@ -3,6 +3,9 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import Lore from './pages/Lore';
 import Ancestries from './pages/Ancestries';
+import CharacterManager from './pages/CharacterManager';
+import CharacterCreator from './pages/CharacterCreator';
+import CharacterSheet from './pages/CharacterSheet';
 import GrimoireLayout from './pages/grimoire/GrimoireLayout';
 import GrimoireOverview from './pages/grimoire/Overview';
 import Combat from './pages/grimoire/Combat';
@@ -18,6 +21,9 @@ function App() {
           <Route index element={<Home />} />
           <Route path="lore" element={<Lore />} />
           <Route path="ancestries" element={<Ancestries />} />
+          <Route path="character-manager" element={<CharacterManager />} />
+          <Route path="character-creator" element={<CharacterCreator />} />
+          <Route path="character-sheet" element={<CharacterSheet />} />
           <Route path="grimoire" element={<GrimoireLayout />}>
             <Route index element={<GrimoireOverview />} />
             <Route path="combat" element={<Combat />} />

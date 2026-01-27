@@ -198,7 +198,7 @@ export default function Ancestries() {
                     {/* Traits */}
                     <section className="mb-8">
                         <h2 className="text-2xl font-display font-bold mb-4 text-verdant-800 dark:text-verdant-300">
-                            Racial Traits
+                            Ancestry Tags
                         </h2>
                         <ul className="space-y-3">
                             {ancestry.traits.map((trait, index) => (
