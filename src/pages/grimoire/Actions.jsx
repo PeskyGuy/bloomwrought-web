@@ -74,8 +74,13 @@ export default function Actions() {
                     />
                     <ActionCard
                         title="Dodge"
-                        description="Spend stamina to dodge an attack or hazard."
-                        details="Spend 1 STAMINA to dodge. Increases in cost by 1 for each tag applied to the attack."
+                        description="Attempt to dodge an attack or hazard."
+                        details="Make an Agility check vs the attack roll. Success: Avoid the attack entirely."
+                    />
+                    <ActionCard
+                        title="Guard"
+                        description="Brace yourself to absorb incoming damage."
+                        details="Gain +2 ARMOR against the next attack this round. Survivor Stance: Clears 1 Exertion if successful."
                     />
                     <ActionCard
                         title="Retaliate"
@@ -87,10 +92,29 @@ export default function Actions() {
 
             <section className="mb-12">
                 <h2 className="text-3xl font-display font-bold mb-6 text-verdant-800 dark:text-verdant-300">Tag Categories</h2>
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    {['Damage', 'Conditional', 'Movement', 'Skill'].map(tag => (
-                        <CategoryCard key={tag} label={tag} variant="primary" />
-                    ))}
+                <p className="prose dark:prose-invert mb-8 text-zinc-600 dark:text-zinc-400">
+                    Tags are divided into two main categories: <strong>Passive</strong> tags that are always active, and <strong>Active</strong> tags that require an action to use (Strike, Use, etc.). Strike modifier tags are FREE but give you 1 Exertion each.
+                </p>
+                
+                <div className="mb-8">
+                    <h3 className="text-2xl font-display font-bold mb-4 text-verdant-700 dark:text-verdant-400">Passive Tags (Always Active)</h3>
+                    <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">These tags work automatically without requiring any action.</p>
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                        <CategoryCard label="Armor Properties" variant="primary" />
+                        <CategoryCard label="Weapon Properties" variant="primary" />
+                        <CategoryCard label="Item Properties" variant="primary" />
+                    </div>
+                </div>
+
+                <div>
+                    <h3 className="text-2xl font-display font-bold mb-4 text-verdant-700 dark:text-verdant-400">Active Tags (Require Action)</h3>
+                    <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">These tags require an action to use. Damage types are free, modifiers give Exertion, effects trigger on hit.</p>
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                        <CategoryCard label="Strike - Damage Types" variant="secondary" />
+                        <CategoryCard label="Strike - Modifiers" variant="secondary" />
+                        <CategoryCard label="Strike - Effects" variant="secondary" />
+                        <CategoryCard label="Use Tags" variant="secondary" />
+                    </div>
                 </div>
             </section>
         </div>

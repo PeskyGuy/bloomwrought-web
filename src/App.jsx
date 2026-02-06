@@ -11,6 +11,7 @@ import GrimoireOverview from './pages/grimoire/Overview';
 import Combat from './pages/grimoire/Combat';
 import Actions from './pages/grimoire/Actions';
 import Equipment from './pages/grimoire/Equipment';
+import Skills from './pages/grimoire/Skills';
 import Glossary from './pages/grimoire/Glossary';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path="combat" element={<Combat />} />
             <Route path="actions" element={<Actions />} />
             <Route path="equipment" element={<Equipment />} />
+            <Route path="skills" element={<Skills />} />
             <Route path="glossary" element={<Glossary />} />
           </Route>
         </Route>

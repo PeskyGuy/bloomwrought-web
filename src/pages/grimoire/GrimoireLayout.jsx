@@ -6,13 +6,24 @@ export default function GrimoireLayout() {
         { to: "combat", label: "Combat Rules" },
         { to: "actions", label: "Tags & Actions" },
         { to: "equipment", label: "Equipment" },
+        { to: "skills", label: "Skills" },
         { to: "glossary", label: "Glossary" },
     ];
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row gap-8">
+            {/* Work in Progress Banner */}
+            <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-amber-500 to-orange-500 dark:from-amber-600 dark:to-orange-600 text-white py-2 px-4 shadow-lg">
+                <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 text-sm font-medium">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <span>Work in Progress - Rules are subject to change</span>
+                </div>
+            </div>
+
             {/* Sidebar */}
-            <aside className="w-full md:w-64 flex-shrink-0">
+            <aside className="w-full md:w-64 flex-shrink-0 mt-12">
                 <div className="sticky top-24">
                     <h2 className="text-2xl font-display font-bold text-verdant-800 dark:text-verdant-200 mb-4 px-4 border-b border-verdant-200 dark:border-verdant-800 pb-2">
                         Grimoire

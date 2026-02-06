@@ -50,7 +50,7 @@ export default function Combat() {
 
             <div className="bg-verdant-50 dark:bg-verdant-900/30 p-6 rounded-lg border-l-4 border-verdant-500 mb-8">
                 <p className="italic m-0 text-verdant-900 dark:text-verdant-100">
-                    Combat revolves around <strong>Tags</strong>, which are modifiers that determine the effect of attacks. Each tag is unique, and weaving these together to create combos is necessary for success.
+                    Combat revolves around <strong>Tags</strong>, which are modifiers that determine the effect of attacks. Passive tags are always active (like armor properties). Active tags require an action to use - damage types are free with Strike, while modifiers like Accurate are also free but give you 1 Exertion each.
                 </p>
             </div>
 
@@ -92,7 +92,7 @@ export default function Combat() {
                         { name: "PRONE", effect: "The target is knocked to the ground. While PRONE, the target has -2 to attack rolls and melee attacks against them have advantage. Standing up costs 1 action and half your movement." },
                         { name: "RESTRAINED", effect: "The target is grabbed or entangled. Cannot move and has -2 to attack rolls and Evasion. The restrainer must use one action each turn to maintain it." },
                         { name: "WOUNDED", effect: "The target has taken significant damage. A creature becomes WOUNDED when reduced to half HP or less." },
-                        { name: "FATIGUED", effect: "The character is exhausted. While FATIGUED, you have -2 to all rolls and your maximum STAMINA is reduced by half (rounded down)." },
+                        { name: "FATIGUED", effect: "The character is exhausted from pushing too hard. While FATIGUED, you have -2 to all rolls. You become FATIGUED when you reach 3+ Exertion." },
                         { name: "DYING", effect: "The character has reached 0 HP and is on death's door. See the Dying section for full rules." }
                     ].map(status => (
                         <StatusEffect key={status.name} name={status.name} description={status.effect} />
@@ -116,49 +116,110 @@ export default function Combat() {
             </Section>
 
             <Section title="Combat Basics">
-                <h3 className="text-2xl font-display font-bold mb-4 text-verdant-700 dark:text-verdant-400">STAMINA</h3>
+                <h3 className="text-2xl font-display font-bold mb-4 text-verdant-700 dark:text-verdant-400">Exertion</h3>
                 <p>
-                    STAMINA represents how much effort you can put into your actions. All characters start with <strong>2 STAMINA</strong>. Applying a tag to your action costs <strong>1 STAMINA</strong>. A tag cannot be applied more than one time.
+                    Exertion represents how hard you're pushing yourself in combat. All Strike modifier tags (Accurate, Rapid, etc.) are <strong>FREE to use</strong>, but each one you apply gives you <strong>1 Exertion</strong>.
                 </p>
-                <div className="p-4 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 mt-4 border border-zinc-200 dark:border-zinc-700 font-medium">
-                    The maximum STAMINA you can have is equal to <strong>GRIT × 2</strong>.
+                <div className="p-4 rounded-lg bg-verdant-50 dark:bg-verdant-900/30 border border-verdant-200 dark:border-verdant-800 mt-4 mb-4">
+                    <p className="text-sm m-0">
+                        <strong>Active tags</strong> require an action to use (Strike, Use, etc.). Damage types are free with Strike. Strike modifiers like Accurate are also free but give 1 Exertion. Use tags like Heal require a Use action but don't give Exertion. <strong>Passive tags</strong> (like armor properties) are always active.
+                    </p>
                 </div>
-                <p className="mt-4">
-                    When your STAMINA drops to 0, you gain <strong>FATIGUED</strong>. While FATIGUED, you have -2 to all rolls and your maximum STAMINA is reduced by half (rounded down).
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div className="p-4 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-700">
+                        <p className="font-medium m-0">At <strong>3+ Exertion</strong>, you become <strong>FATIGUED</strong> (-2 to all rolls).</p>
+                    </div>
+                    <div className="p-4 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200 border border-red-200 dark:border-red-800">
+                        <p className="font-medium m-0">At <strong>GRIT + 3 Exertion</strong>, you <strong>collapse</strong> (fall PRONE, cannot act until Exertion drops).</p>
+                    </div>
+                </div>
+
+                <h4 className="text-xl font-display font-bold mt-6 mb-3 text-verdant-700 dark:text-verdant-400">Passive Exertion Decay</h4>
+                <p>
+                    At the <strong>START of your turn</strong> (before you act), you automatically lose <strong>-1 Exertion</strong>. This means if you push hard (3-4 Exertion), you'll recover naturally over 3-4 rounds. This creates a rhythm: Push hard → coast/recover → push again.
                 </p>
 
-                <h3 className="text-2xl font-display font-bold mt-8 mb-4 text-verdant-700 dark:text-verdant-400">Initiative and Turns</h3>
-                <p>
-                    Initiative is determined by a contested <strong>Wits</strong> roll against the leader of each group. The highest roll goes first.
+                <h4 className="text-xl font-display font-bold mt-6 mb-3 text-verdant-700 dark:text-verdant-400">Active Exertion Clearing (Stance-Based)</h4>
+                <p className="mb-4">Each stance has signature actions that clear Exertion, rewarding you for playing to your stance's strengths:</p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div className="p-4 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800">
+                        <h5 className="font-bold text-red-800 dark:text-red-300 mb-2 font-display">Feral Stance</h5>
+                        <ul className="text-sm space-y-1">
+                            <li>• Kill an enemy: <strong>-2 Exertion</strong></li>
+                            <li>• Wound enemy below half HP: <strong>-1 Exertion</strong></li>
+                        </ul>
+                        <p className="text-xs italic mt-2 text-red-700 dark:text-red-400">The thrill of the hunt reinvigorates you.</p>
+                    </div>
+                    <div className="p-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800">
+                        <h5 className="font-bold text-blue-800 dark:text-blue-300 mb-2 font-display">Survivor Stance</h5>
+                        <ul className="text-sm space-y-1">
+                            <li>• Take damage (after armor): <strong>-1 Exertion</strong></li>
+                            <li>• Grapple or Guard successfully: <strong>-1 Exertion</strong></li>
+                        </ul>
+                        <p className="text-xs italic mt-2 text-blue-700 dark:text-blue-400">Adrenaline and defensive focus keep you grounded.</p>
+                    </div>
+                    <div className="p-4 rounded-lg bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
+                        <h5 className="font-bold text-green-800 dark:text-green-300 mb-2 font-display">Hunter Stance</h5>
+                        <ul className="text-sm space-y-1">
+                            <li>• Apply TRACKED to enemy: <strong>-1 Exertion</strong></li>
+                            <li>• Attack TRACKED enemy: <strong>-1 Exertion</strong></li>
+                        </ul>
+                        <p className="text-xs italic mt-2 text-green-700 dark:text-green-400">Patient, methodical focus calms your breathing.</p>
+                    </div>
+                </div>
+
+                <div className="p-4 rounded-lg bg-verdant-50 dark:bg-verdant-900/30 border border-verdant-200 dark:border-verdant-800">
+                    <p className="text-sm m-0"><strong>Short Rest:</strong> Clears all Exertion</p>
+                </div>
+
+                <p className="mt-4 text-sm italic">
+                    This creates a risk/reward loop: Use powerful tag combos freely, but push too hard and you'll crash.
                 </p>
-                <ul className="list-disc pl-5 space-y-2">
-                    <li>Each player in the group can pass the turn to another player or enemy if they wish.</li>
-                    <li>Passing to an enemy grants the character <strong>+1 STAMINA</strong>.</li>
-                    <li>Each character in a turn has <strong>two actions</strong>.</li>
-                    <li>Attacking a second time has a penalty of <strong>-2</strong> to the attack roll.</li>
+
+                <h3 className="text-2xl font-display font-bold mt-8 mb-4 text-verdant-700 dark:text-verdant-400">Initiative and Turn Order</h3>
+                <p className="mb-4">
+                    <strong>Between Groups (Contested Roll):</strong>
+                </p>
+                <ul className="list-disc pl-5 space-y-2 mb-4">
+                    <li>Highest Wits on each side rolls 2d6 + Wits</li>
+                    <li>Winning group acts first</li>
+                    <li>Ties: Reroll or flip a coin</li>
                 </ul>
+                <p className="mb-4">
+                    <strong>Within Your Group (Automatic Sorting by Stance):</strong>
+                </p>
+                <p className="mb-2">The winning group acts in this stance order:</p>
+                <ol className="list-decimal pl-5 space-y-2 mb-4">
+                    <li><strong>Hunter Stance</strong> (patient, observant - goes first to set up)</li>
+                    <li><strong>Survivor Stance</strong> (reactive, defensive - goes middle)</li>
+                    <li><strong>Feral Stance</strong> (aggressive, reckless - goes last to capitalize)</li>
+                </ol>
+                <p>
+                    Each character has <strong>two actions</strong> per turn. Attacking a second time has a penalty of <strong>-2</strong> to the attack roll.
+                </p>
             </Section>
 
             <Section title="Stances">
                 <p className="mb-6">
-                    By default, characters cannot gain STAMINA unless they choose a <strong>Stance</strong>. Each stance grants a different way to generate STAMINA.
+                    Stances determine your turn order within your group and provide unique ways to manage Exertion through stance-specific actions.
                 </p>
                 <p className="mb-6">
-                    You choose your stance at the start of each combat as a free action. You can change your stance between combats freely, but changing stance mid-combat requires spending 1 action and costs 1 STAMINA.
+                    You choose your stance at the start of each combat as a free action. You can change your stance between combats freely, but changing stance mid-combat requires spending 1 action.
                 </p>
 
                 <div className="grid grid-cols-1 gap-6">
                     <StanceCard
                         name="Feral Stance"
-                        generation="Grants +1 STAMINA per enemy slain."
+                        generation="Acts last in turn order. Aggressive and reckless, capitalizes on openings. Clears Exertion by wounding and killing enemies (-2 for kills, -1 for wounding below half HP)."
                         variantTags={[
-                            { name: "Momentum", effect: "You gain +1 SPEED per additional tag applied to Movement." },
-                            { name: "Berserker", effect: "You gain +1 DAMAGE per additional tag applied to a Strike." }
+                            { name: "Momentum", effect: "You gain +1 SPEED per Strike modifier tag applied to Movement." },
+                            { name: "Berserker", effect: "You gain +1 DAMAGE per Strike modifier tag applied to a Strike." }
                         ]}
                     />
                     <StanceCard
                         name="Survivor Stance"
-                        generation="Grants +1 STAMINA per attack taken."
+                        generation="Acts second in turn order. Reactive and defensive, holds the line. Clears Exertion by taking damage (-1 after armor) and controlling enemies (-1 for successful Grapple or Guard)."
                         variantTags={[
                             { name: "Bulwark", effect: "Grant yourself +1 ARMOR as a reaction." },
                             { name: "Protection", effect: "As a reaction, guard an ally from damage. Damage is split between you and the ally." }
@@ -166,19 +227,12 @@ export default function Combat() {
                     />
                     <StanceCard
                         name="Hunter Stance"
-                        generation="Grants +1 STAMINA per enemy TRACKED."
+                        generation="Acts first in turn order. Patient and observant, sets up attacks for allies. Clears Exertion by tracking targets (-1 for applying TRACKED) and attacking them (-1 for attacking TRACKED enemies)."
                         variantTags={[
                             { name: "Stalker", effect: "You gain a free action to apply TRACKED to an enemy. This can be used once per combat." },
                             { name: "Opportunist", effect: "Enemies that are WOUNDED are also EXPOSED." }
                         ]}
                     />
-                </div>
-
-                <div className="mt-8 p-6 bg-verdant-50/50 dark:bg-verdant-900/10 rounded-xl border border-verdant-200 dark:border-verdant-800">
-                    <h3 className="text-xl font-bold mb-2 text-verdant-700 dark:text-verdant-400 font-display">Variant Rule: Regenerative Stamina</h3>
-                    <p className="text-zinc-600 dark:text-zinc-400 m-0">
-                        With this optional rule, characters gain <strong>+1 STAMINA</strong> at the start of their turns. Stances now do not provide a way to generate STAMINA, but instead grant the conditional tags listed above.
-                    </p>
                 </div>
             </Section>
 
@@ -197,12 +251,12 @@ export default function Combat() {
                             </tr>
                         </thead>
                         <tbody>
-                            <TableRow roll="6" name="Well Fed" effect="+1 maximum STAMINA" />
+                            <TableRow roll="6" name="Well Fed" effect="Start combat with -1 Exertion (minimum 0)" />
                             <TableRow roll="5" name="Satisfied" effect="No effect" />
                             <TableRow roll="4" name="Peckish" effect="No effect" />
-                            <TableRow roll="3" name="Hungry" effect="-1 maximum STAMINA" />
-                            <TableRow roll="2" name="Starving" effect="-2 maximum STAMINA, -1 to all rolls" />
-                            <TableRow roll="1" name="Famished" effect="-3 maximum STAMINA, -2 to all rolls, lose 1 HP per hour" />
+                            <TableRow roll="3" name="Hungry" effect="Start combat with +1 Exertion" />
+                            <TableRow roll="2" name="Starving" effect="Start combat with +2 Exertion, -1 to all rolls" />
+                            <TableRow roll="1" name="Famished" effect="Start combat with +3 Exertion (FATIGUED), -2 to all rolls, lose 1 HP per hour" />
                         </tbody>
                     </table>
                 </div>
@@ -264,7 +318,7 @@ export default function Combat() {
                 <ul className="list-disc pl-5 space-y-2">
                     <li>You can crawl up to 1 hex per action</li>
                     <li>You can make attacks at -3 to hit</li>
-                    <li>You cannot use STAMINA or apply tags</li>
+                    <li>You cannot apply Strike modifier tags (but damage types still work)</li>
                     <li>You gain 1 DESPERATION token (first time per combat only)</li>
                 </ul>
                 <p className="mt-4">At the start of each of your turns while DYING, roll 1d6:</p>
@@ -304,7 +358,7 @@ export default function Combat() {
                         <h4 className="text-lg font-bold mb-3 text-verdant-800 dark:text-verdant-300 font-display">Spend 2 DESPERATION</h4>
                         <ul className="space-y-2 text-sm">
                             <li>• Ignore FATIGUED or one Lingering Injury for one combat</li>
-                            <li>• Gain +2 STAMINA immediately</li>
+                            <li>• Clear all Exertion immediately</li>
                             <li>• Force an enemy to reroll their attack against you</li>
                         </ul>
                     </div>
@@ -327,8 +381,8 @@ export default function Combat() {
                 <ul className="list-disc pl-5 space-y-2">
                     <li>Restore all HP (unless you have a Lingering Injury that prevents healing)</li>
                     <li>Remove FATIGUED status (if you also consume a ration)</li>
+                    <li>Clear all Exertion</li>
                     <li>Lose all DESPERATION tokens</li>
-                    <li>STAMINA resets to starting value (2)</li>
                 </ul>
                 <p className="mt-4 italic">Lingering Injuries are NOT removed by rest - they require medical treatment.</p>
 
@@ -336,6 +390,7 @@ export default function Combat() {
                 <p>A short rest requires 1 hour of downtime. During a short rest:</p>
                 <ul className="list-disc pl-5 space-y-2">
                     <li>Restore HP equal to your GRIT</li>
+                    <li>Clear all Exertion</li>
                     <li>You can consume rations to increase Hunger</li>
                     <li>You can treat wounds with medical supplies</li>
                 </ul>
@@ -343,7 +398,7 @@ export default function Combat() {
                 <h3 className="text-2xl font-display font-bold mt-8 mb-4 text-verdant-700 dark:text-verdant-400">Between Combats</h3>
                 <p>After combat ends, characters:</p>
                 <ul className="list-disc pl-5 space-y-2">
-                    <li>Keep their current STAMINA (does not reset)</li>
+                    <li>Keep their current Exertion (does not reset)</li>
                     <li>Keep all status effects unless specified otherwise</li>
                     <li>Can change their stance as a free action before the next combat</li>
                     <li>Track combat encounters for Hunger (every 2 combats = -1 Hunger)</li>
@@ -362,7 +417,7 @@ export default function Combat() {
                     <div className="p-6 rounded-xl bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800">
                         <h3 className="text-xl font-bold mb-4 text-zinc-800 dark:text-zinc-300 font-display">Starting Values</h3>
                         <ul className="space-y-2 text-sm">
-                            <li><strong>STAMINA:</strong> 2 (max = GRIT × 2)</li>
+                            <li><strong>Exertion:</strong> 0 (FATIGUED at 3+)</li>
                             <li><strong>Hunger:</strong> 4 (Peckish)</li>
                             <li><strong>Actions per Turn:</strong> 2</li>
                             <li><strong>DESPERATION:</strong> 0 (max = GRIT, min 1)</li>

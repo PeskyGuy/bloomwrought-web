@@ -34,14 +34,16 @@ export default function Glossary() {
     ];
 
     const resources = [
-        { term: "STAMINA", definition: "Resource spent to apply tags to your actions. Starts at 2, maximum = GRIT × 2." },
+        { term: "Exertion", definition: "Represents how hard you're pushing yourself. Each Strike modifier tag gives 1 Exertion. At 3+ Exertion, you become FATIGUED. Passively decays by -1 at the start of your turn. Max = GRIT + 3." },
         { term: "DESPERATION", definition: "Tokens gained when going DYING, spent for powerful survival effects." },
         { term: "Brick", definition: "A dense packet of hardened nutrient paste that serves as currency and emergency food." },
     ];
 
     const combatMechanics = [
-        { term: "Stance", definition: "Your combat approach (Feral, Survivor, or Hunter) that determines how you generate STAMINA." },
-        { term: "Tag", definition: "A modifier applied to actions using STAMINA. See Tags & Actions for full list." },
+        { term: "Stance", definition: "Your combat approach (Feral, Survivor, or Hunter) that determines your turn order within your group and provides unique ways to clear Exertion through stance-specific actions." },
+        { term: "Tag", definition: "A modifier applied to actions or equipment. See Tags & Actions for full list." },
+        { term: "Passive", definition: "Tags that are always active without requiring any action, such as armor properties (Heavy, Reflective, etc." },
+        { term: "Active", definition: "Tags that require an action to use. Includes Strike tags (damage types are free, modifiers give 1 Exertion each, effects trigger on hit) and Use tags (Heal, Cure, etc.)." },
         { term: "Death Mark", definition: "A strike against your life while DYING. Three Death Marks result in permanent death." },
         { term: "Lingering Injury", definition: "A lasting wound from a critical hit that imposes ongoing penalties until treated." },
     ];
@@ -49,7 +51,7 @@ export default function Glossary() {
     const statusEffects = [
         { term: "DYING", definition: "Status effect when you reach 0 HP and are on death's door." },
         { term: "EXPOSED", definition: "Status effect where the target's defenses are compromised. Attacks against EXPOSED targets have advantage." },
-        { term: "FATIGUED", definition: "Status effect where the character is exhausted. While FATIGUED, you have -2 to all rolls and your maximum STAMINA is reduced by half." },
+        { term: "FATIGUED", definition: "Status effect where the character is exhausted from pushing too hard. While FATIGUED, you have -2 to all rolls. You become FATIGUED when you reach 3+ Exertion." },
         { term: "PRONE", definition: "Status effect where the target is knocked to the ground. While PRONE, the target has -2 to attack rolls and melee attacks against them have advantage." },
         { term: "RESTRAINED", definition: "Status effect where the target is grabbed or entangled. Cannot move and has -2 to attack rolls and Evasion." },
         { term: "TRACKED", definition: "Status effect marking a target for focused attacks. Grants bonuses to certain weapons and abilities." },

@@ -8,6 +8,9 @@ export default function GrimoireOverview() {
                 <p className="text-xl text-zinc-600 dark:text-zinc-300 max-w-3xl mx-auto">
                     The compendium of knowledge for Bloomwrought. Here you will find the mechanics of survival, combat, and the definitions of the world.
                 </p>
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-4">
+                    Version 0.3.1a
+                </p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
