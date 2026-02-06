@@ -57,7 +57,7 @@ export default function Layout() {
 
             <footer className="py-8 border-t border-verdant-200 dark:border-verdant-900 mt-12 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm">
                 <div className="max-w-7xl mx-auto px-4 text-center text-sm text-zinc-500 dark:text-zinc-500">
-                    <p className="font-mono text-xs opacity-70">v0.4.0</p>
+                    <p className="font-mono text-xs opacity-70">Version 0.3.1a</p>
                 </div>
             </footer>
         </div>
