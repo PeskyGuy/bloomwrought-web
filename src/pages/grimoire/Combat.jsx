@@ -83,23 +83,6 @@ export default function Combat() {
                 </div>
             </Section>
 
-            <Section title="Status Effects">
-                <p>Status effects are conditions that modify how a character or enemy functions in combat. Multiple status effects can be active at once unless otherwise specified.</p>
-                <div className="grid grid-cols-1 gap-4 mt-6">
-                    {[
-                        { name: "TRACKED", effect: "The target has been marked for focused attacks. Certain weapons and abilities gain bonuses against TRACKED targets." },
-                        { name: "EXPOSED", effect: "The target's defenses are compromised. Attacks against EXPOSED targets have advantage. Removed at the end of the target's next turn." },
-                        { name: "PRONE", effect: "The target is knocked to the ground. While PRONE, the target has -2 to attack rolls and melee attacks against them have advantage. Standing up costs 1 action and half your movement." },
-                        { name: "RESTRAINED", effect: "The target is grabbed or entangled. Cannot move and has -2 to attack rolls and Evasion. The restrainer must use one action each turn to maintain it." },
-                        { name: "WOUNDED", effect: "The target has taken significant damage. A creature becomes WOUNDED when reduced to half HP or less." },
-                        { name: "FATIGUED", effect: "The character is exhausted from pushing too hard. While FATIGUED, you have -2 to all rolls. You become FATIGUED when you reach 3+ Exertion." },
-                        { name: "DYING", effect: "The character has reached 0 HP and is on death's door. See the Dying section for full rules." }
-                    ].map(status => (
-                        <StatusEffect key={status.name} name={status.name} description={status.effect} />
-                    ))}
-                </div>
-            </Section>
-
             <Section title="Advantage and Disadvantage">
                 <p>Some situations give you an edge or put you at a disadvantage when making rolls.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -118,7 +101,7 @@ export default function Combat() {
             <Section title="Combat Basics">
                 <h3 className="text-2xl font-display font-bold mb-4 text-verdant-700 dark:text-verdant-400">Exertion</h3>
                 <p>
-                    Exertion represents how hard you're pushing yourself in combat. All Strike modifier tags (Accurate, Rapid, etc.) are <strong>FREE to use</strong>, but each one you apply gives you <strong>1 Exertion</strong>.
+                    Exertion represents how hard you're pushing yourself in combat. All Strike modifier tags (Accurate, Rapid, etc.) gives you <strong>1 Exertion</strong> when applied to a Strike.
                 </p>
                 <div className="p-4 rounded-lg bg-verdant-50 dark:bg-verdant-900/30 border border-verdant-200 dark:border-verdant-800 mt-4 mb-4">
                     <p className="text-sm m-0">

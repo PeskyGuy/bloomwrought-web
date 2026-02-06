@@ -26,6 +26,13 @@ export default function GrimoireOverview() {
                 </Link>
 
                 <Link
+                    to="/grimoire/tags"
+                    className="group p-6 md:p-8 rounded-2xl bg-verdant-50/50 dark:bg-verdant-900/10 border border-verdant-100 dark:border-verdant-800 hover:border-verdant-400 dark:hover:border-verdant-600 hover:shadow-xl hover:shadow-verdant-900/5 transition-all duration-300 flex items-center justify-center"
+                >
+                    <h3 className="font-display text-2xl md:text-3xl mb-0 text-verdant-800 dark:text-verdant-200 group-hover:text-verdant-600 dark:group-hover:text-verdant-400 transition-colors text-center">Tags</h3>
+                </Link>
+
+                <Link
                     to="/grimoire/equipment"
                     className="group p-6 md:p-8 rounded-2xl bg-verdant-50/50 dark:bg-verdant-900/10 border border-verdant-100 dark:border-verdant-800 hover:border-verdant-400 dark:hover:border-verdant-600 hover:shadow-xl hover:shadow-verdant-900/5 transition-all duration-300 flex items-center justify-center"
                 >
@@ -33,10 +40,10 @@ export default function GrimoireOverview() {
                 </Link>
 
                 <Link
-                    to="/grimoire/glossary"
+                    to="/grimoire/skills"
                     className="group p-6 md:p-8 rounded-2xl bg-verdant-50/50 dark:bg-verdant-900/10 border border-verdant-100 dark:border-verdant-800 hover:border-verdant-400 dark:hover:border-verdant-600 hover:shadow-xl hover:shadow-verdant-900/5 transition-all duration-300 flex items-center justify-center"
                 >
-                    <h3 className="font-display text-2xl md:text-3xl mb-0 text-verdant-800 dark:text-verdant-200 group-hover:text-verdant-600 dark:group-hover:text-verdant-400 transition-colors text-center">Glossary</h3>
+                    <h3 className="font-display text-2xl md:text-3xl mb-0 text-verdant-800 dark:text-verdant-200 group-hover:text-verdant-600 dark:group-hover:text-verdant-400 transition-colors text-center">Skills</h3>
                 </Link>
             </div>
         </div>

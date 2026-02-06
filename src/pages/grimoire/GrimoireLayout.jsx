@@ -4,10 +4,10 @@ export default function GrimoireLayout() {
     const links = [
         { to: ".", label: "Overview", end: true },
         { to: "combat", label: "Combat Rules" },
-        { to: "actions", label: "Tags & Actions" },
+        { to: "actions", label: "Actions" },
+        { to: "tags", label: "Tags" },
         { to: "equipment", label: "Equipment" },
         { to: "skills", label: "Skills" },
-        { to: "glossary", label: "Glossary" },
     ];
 
     return (

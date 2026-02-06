@@ -23,7 +23,7 @@ const CategoryCard = ({ label, variant = "primary" }) => (
 export default function Actions() {
     return (
         <div>
-            <h1 className="font-display text-4xl md:text-5xl mb-8 text-verdant-900 dark:text-verdant-50">Tags & Actions</h1>
+            <h1 className="font-display text-4xl md:text-5xl mb-8 text-verdant-900 dark:text-verdant-50">Actions</h1>
 
             <section className="mb-12">
                 <h2 className="text-3xl font-display font-bold mb-6 text-verdant-800 dark:text-verdant-300 border-b border-verdant-100 dark:border-verdant-800 pb-2">Basic Actions</h2>
@@ -91,31 +91,10 @@ export default function Actions() {
             </section>
 
             <section className="mb-12">
-                <h2 className="text-3xl font-display font-bold mb-6 text-verdant-800 dark:text-verdant-300">Tag Categories</h2>
+                <h2 className="text-3xl font-display font-bold mb-6 text-verdant-800 dark:text-verdant-300">Action Types</h2>
                 <p className="prose dark:prose-invert mb-8 text-zinc-600 dark:text-zinc-400">
-                    Tags are divided into two main categories: <strong>Passive</strong> tags that are always active, and <strong>Active</strong> tags that require an action to use (Strike, Use, etc.). Strike modifier tags are FREE but give you 1 Exertion each.
+                    Actions are divided into three main types: Basic Actions available to all characters, Reactions triggered outside your turn, and Free Actions that don't cost an action.
                 </p>
-                
-                <div className="mb-8">
-                    <h3 className="text-2xl font-display font-bold mb-4 text-verdant-700 dark:text-verdant-400">Passive Tags (Always Active)</h3>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">These tags work automatically without requiring any action.</p>
-                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-                        <CategoryCard label="Armor Properties" variant="primary" />
-                        <CategoryCard label="Weapon Properties" variant="primary" />
-                        <CategoryCard label="Item Properties" variant="primary" />
-                    </div>
-                </div>
-
-                <div>
-                    <h3 className="text-2xl font-display font-bold mb-4 text-verdant-700 dark:text-verdant-400">Active Tags (Require Action)</h3>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">These tags require an action to use. Damage types are free, modifiers give Exertion, effects trigger on hit.</p>
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                        <CategoryCard label="Strike - Damage Types" variant="secondary" />
-                        <CategoryCard label="Strike - Modifiers" variant="secondary" />
-                        <CategoryCard label="Strike - Effects" variant="secondary" />
-                        <CategoryCard label="Use Tags" variant="secondary" />
-                    </div>
-                </div>
             </section>
         </div>
     );
